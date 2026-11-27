@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Générateur de QCM — Droit administratif global</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header>
+  <p class="titre">Droit administratif global</p>
+  <p class="sous-titre">Générateur de QCM — 1000 questions en 10 thèmes</p>
+</header>
+<nav>
+  <a href="index.html">Accueil</a>
+  <a href="cours.html">Le cours</a>
+  <a href="qcm.html" class="actif">Générateur de QCM</a>
+  <a href="jurisprudence.html">QCM de jurisprudence</a>
+  <a href="questions-de-cours.html">Questions de cours</a>
+</nav>
+<main>
+  <div id="ecran-accueil" class="carte">
+    <h1>Configurer la série</h1>
+    <p class="muet">Une question à la fois ; après chaque réponse, la bonne réponse s'affiche
+    avec le renvoi au passage du cours. Raccourcis clavier : 1-4 ou A-D pour répondre,
+    Entrée pour passer à la question suivante.</p>
+    <label for="theme">Thème</label>
+    <select id="theme">
+      <option value="all">Tous les thèmes (1000 questions)</option>
+    </select>
+    <label for="longueur">Nombre de questions</label>
+    <select id="longueur"></select>
+    <button id="lancer" class="btn">Commencer</button>
+    <div id="records"></div>
+  </div>
+
+  <div id="ecran-question" class="carte zone-question" style="display:none">
+    <div class="barre-progression"><div id="progression"></div></div>
+    <p class="question-num" id="num"></p>
+    <p class="question-texte" id="texte"></p>
+    <div class="options" id="options"></div>
+    <p class="verdict" id="verdict"></p>
+    <div id="renvoi"></div>
+    <button id="suivant" class="btn" style="display:none">Question suivante</button>
+  </div>
+
+  <div id="ecran-fin" class="carte score-final" style="display:none">
+    <h1>Série terminée</h1>
+    <p class="gros" id="score"></p>
+    <p id="phrase-score"></p>
+    <p class="muet" id="record"></p>
+    <button id="rejouer" class="btn">Nouvelle série</button>
+  </div>
+</main>
+<div class="pied">Droit administratif global — documents et entraînement</div>
+<script>window.QUIZ_DATASET = "qcm"; window.QUIZ_FILE = "data/qcm.json";</script>
+<script src="quiz.js"></script>
+</body>
+</html>

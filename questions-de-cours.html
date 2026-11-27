@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Questions de cours — Droit administratif global</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header>
+  <p class="titre">Droit administratif global</p>
+  <p class="sous-titre">200 questions de connaissance, avec réponse modèle</p>
+</header>
+<nav>
+  <a href="index.html">Accueil</a>
+  <a href="cours.html">Le cours</a>
+  <a href="qcm.html">Générateur de QCM</a>
+  <a href="jurisprudence.html">QCM de jurisprudence</a>
+  <a href="questions-de-cours.html" class="actif">Questions de cours</a>
+</nav>
+<main>
+  <div class="carte">
+    <h1>Questions de cours</h1>
+    <p class="muet">Répondez d'abord de tête, puis cliquez sur « Voir la réponse modèle ». Chaque
+    corrigé indique le renvoi au passage du cours correspondant.</p>
+    <label for="theme">Thème</label>
+    <select id="theme">
+      <option value="all">Tous les thèmes (200 questions)</option>
+    </select>
+    <button id="melanger" class="btn secondaire">Mélanger</button>
+    <button id="tout" class="btn secondaire">Tout déplier</button>
+  </div>
+  <div id="liste"></div>
+</main>
+<div class="pied">Droit administratif global — documents et entraînement</div>
+<script src="questions-de-cours.js"></script>
+</body>
+</html>
