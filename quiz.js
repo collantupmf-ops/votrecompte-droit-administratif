@@ -30,14 +30,20 @@ function bestKey(theme) {
 }
 
 function renvoiHTML(item) {
-  if (!item.r) return "";
-  const page = item.pg || item.p;
-  let html = "Renvoi au cours : " + escapeHTML(item.r);
-  if (page) {
-    html += ' — <a href="' + PDF_URL + '#page=' + page +
-            '" target="_blank" rel="noopener">ouvrir la page ' + page + "</a>";
+  let out = "";
+  if (item.r) {
+    const page = item.pg || item.p;
+    let html = "Renvoi au cours : " + escapeHTML(item.r);
+    if (page) {
+      html += ' — <a href="' + PDF_URL + '#page=' + page +
+              '" target="_blank" rel="noopener">ouvrir la page ' + page + "</a>";
+    }
+    out += '<p class="renvoi">' + html + "</p>";
   }
-  return '<p class="renvoi">' + html + "</p>";
+  if (item.x) {
+    out += '<p class="renvoi extrait">Extrait : « ' + escapeHTML(item.x) + ' »</p>';
+  }
+  return out;
 }
 
 function escapeHTML(s) {

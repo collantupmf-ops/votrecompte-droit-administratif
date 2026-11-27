@@ -64,12 +64,14 @@ function afficher() {
       renvoi += ' — <a href="' + PDF_URL + '#page=' + page +
                 '" target="_blank" rel="noopener">ouvrir la page ' + page + "</a>";
     }
+    const extrait = item.x ? '<p class="renvoi extrait">Extrait : « ' + escapeHTML(item.x) + ' »</p>' : "";
     div.innerHTML =
       '<p class="q">' + escapeHTML(item.q) + "</p>" +
       '<button class="btn secondaire voir">Voir la réponse modèle</button>' +
       '<div class="reponse-cachee">' +
       '<p class="rep">' + escapeHTML(item.a) + "</p>" +
       (renvoi ? '<p class="renvoi">Renvoi au cours : ' + renvoi + "</p>" : "") +
+      extrait +
       "</div>";
     cart.appendChild(div);
   }
